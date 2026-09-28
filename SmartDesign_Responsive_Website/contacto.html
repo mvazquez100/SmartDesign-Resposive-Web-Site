@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Formulario de contacto de Smart Design.">
+  <title>Smart Design | Contacto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+          <img src="img/smart-design-logo.png" alt="Logo de Smart Design">
+          <span>Smart Design</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú de navegación"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portafolio</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="page-banner">
+      <div class="container">
+        <p class="text-uppercase fw-bold mb-2">Hablemos</p>
+        <h1 class="display-5 fw-bold">Contacto</h1>
+        <p class="lead mb-0">Envía un mensaje para solicitar información sobre tu próximo proyecto.</p>
+      </div>
+    </section>
+  </header>
+
+  <main class="contact-section py-5">
+    <div class="container py-4">
+      <div class="row g-5">
+        <section class="col-lg-7" aria-labelledby="form-title">
+          <div class="card info-card p-4 p-md-5 bg-white">
+            <h2 class="section-title h3" id="form-title">Formulario de contacto</h2>
+            <p class="text-secondary">Los campos marcados son obligatorios. Este formulario es ficticio y se utiliza para fines académicos.</p>
+            <form class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required minlength="2">
+                <div class="invalid-feedback">Escribe tu nombre.</div>
+              </div>
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="nombre@ejemplo.com" required>
+                <div class="invalid-feedback">Escribe un correo electrónico válido.</div>
+              </div>
+              <div class="mb-4">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required minlength="10"></textarea>
+                <div class="invalid-feedback">Escribe un mensaje de al menos 10 caracteres.</div>
+              </div>
+              <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+            </form>
+          </div>
+        </section>
+
+        <aside class="col-lg-5" aria-labelledby="contact-info-title">
+          <div class="card info-card p-4 p-md-5 bg-white h-100">
+            <h2 class="section-title h3" id="contact-info-title">Información adicional</h2>
+            <address class="mt-3 mb-0">
+              <p><strong>Smart Design</strong><br>San Juan, Puerto Rico</p>
+              <p><strong>Correo:</strong><br><a href="mailto:hola@smartdesign.example">hola@smartdesign.example</a></p>
+              <p><strong>Teléfono:</strong><br><a href="tel:+17875550192">(787) 555-0192</a></p>
+              <p><strong>Horario:</strong><br>Lunes a viernes, 9:00 a.m. – 5:00 p.m.</p>
+            </address>
+            <hr>
+            <p class="small text-secondary mb-0">La dirección, correo y teléfono son datos ficticios para cumplir con los requisitos del laboratorio.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <small>&copy; 2026 Smart Design. Proyecto académico.</small>
+      <div><a href="index.html">Inicio</a> · <a href="portfolio.html">Portafolio</a> · <a href="contacto.html">Contacto</a></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            event.preventDefault();
+            alert('Formulario validado correctamente. En un sitio real, aquí se enviaría el mensaje.');
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</body>
+</html>
